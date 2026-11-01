@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-// Application entry point function
 void main() {
   runApp(const StudentIdApp());
 }
 
-// Root application widget
 class StudentIdApp extends StatelessWidget {
   const StudentIdApp({super.key});
 
@@ -23,16 +21,14 @@ class StudentIdApp extends StatelessWidget {
   }
 }
 
-// Primary presentation screen widget
 class StudentIdScreen extends StatelessWidget {
   const StudentIdScreen({super.key});
 
-  // Modular helper method to build reusable skill tags
   Widget _buildSkillChip(String label) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 6.0),
       decoration: BoxDecoration(
-        color: const Color(0xFFCCD0CF), // أفتح لون في الباليتة
+        color: const Color(0xFFCCD0CF),
         borderRadius: BorderRadius.circular(20.0),
         boxShadow: [
           BoxShadow(
@@ -56,7 +52,7 @@ class StudentIdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF06141B), // أغمق لون خلفية
+      backgroundColor: const Color(0xFF06141B),
       appBar: AppBar(
         title: const Text(
           'Digital Student ID',
@@ -74,7 +70,6 @@ class StudentIdScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // 1. Dual-Layer Profile Avatar
                   const CircleAvatar(
                     radius: 48.0,
                     backgroundColor: Color(0xFF4A5C6A),
@@ -89,8 +84,6 @@ class StudentIdScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12.0),
-
-                  // 2. Student Full Name
                   const Text(
                     'Mariem Omran',
                     style: TextStyle(
@@ -101,8 +94,6 @@ class StudentIdScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 4.0),
-
-                  // 3. Academic Specialization
                   const Text(
                     'INFORMATION SYSTEM STUDENT',
                     style: TextStyle(
@@ -112,9 +103,7 @@ class StudentIdScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-
-                  // 4. Horizontal Separator Rule
-                  SizedBox(
+                  const SizedBox(
                     height: 25.0,
                     width: 160.0,
                     child: Divider(
@@ -122,8 +111,6 @@ class StudentIdScreen extends StatelessWidget {
                       thickness: 1.0,
                     ),
                   ),
-
-                  // 5. Academic Credential Cards
                   Card(
                     color: const Color(0xFF11212D),
                     margin: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 24.0),
@@ -163,7 +150,7 @@ class StudentIdScreen extends StatelessWidget {
                     child: const ListTile(
                       leading: Icon(Icons.phone, color: Color(0xFF9BA8AB)),
                       title: Text(
-                        '+20 101 234 5678',
+                        '+20 1015789432',
                         style: TextStyle(
                           color: Color(0xFFCCD0CF),
                           fontWeight: FontWeight.bold,
@@ -188,10 +175,7 @@ class StudentIdScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-
                   const SizedBox(height: 10.0),
-
-                  // 6. Horizontal Technical Skills Badges
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -208,8 +192,6 @@ class StudentIdScreen extends StatelessWidget {
           ),
         ),
       ),
-
-      // 7. Interactive Floating Action Button with SnackBar
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           ScaffoldMessenger.of(context).showSnackBar(
